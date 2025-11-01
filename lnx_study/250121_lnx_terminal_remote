@@ -1,0 +1,6 @@
+shutdown shutdown in 60s
+    -c  cancel
+    -r  reboot
+    now literally
+    +x  in x min
+    xx:xx

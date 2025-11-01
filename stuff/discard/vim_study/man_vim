@@ -1,0 +1,54 @@
+VIM - Vi IMproved 9.1 (2024 Jan 02, 编译于 Nov 06 2024 19:04:03)
+
+用法: vim [参数] [文件 ..]       编辑指定的文件
+  或: vim [参数] -               从标准输入(stdin)读取文本
+  或: vim [参数] -t tag          编辑 tag 定义处的文件
+  或: vim [参数] -q [errorfile]  编辑第一个出错处的文件
+
+参数:
+   --			在这以后只有文件名
+   -v			Vi 模式 (同 "vi")
+   -e			Ex 模式 (同 "ex")
+   -E			改进的 Ex 模式
+   -s			安静(批处理)模式 (只能与 "ex" 一起使用)
+   -d			Diff 模式 (同 "vimdiff")
+   -y			容易模式 (同 "evim"，无模式)
+   -R			只读模式 (同 "view")
+   -Z			限制模式 (同 "rvim")
+   -m			不可修改(写入文件)
+   -M			文本不可修改
+   -b			二进制模式
+   -l			Lisp 模式
+   -C			兼容传统的 Vi: 'compatible'
+   -N			不完全兼容传统的 Vi: 'nocompatible'
+   -V[N][文件名]	显示详细信息 [级别 N] [记录消息到指定的文件名]
+   -D			调试模式
+   -n			不使用交换文件，只使用内存
+   -r			列出交换文件并退出
+   -r (跟文件名)	恢复崩溃的会话
+   -L			同 -r
+   -A			以 Arabic 模式启动
+   -H			以 Hebrew 模式启动
+   -T <terminal>	设定终端类型为 <terminal>
+   --not-a-term		跳过输入/输出不是终端的警告
+   --ttyfail		如果输入或输出不是终端就退出
+   -u <vimrc>		使用 <vimrc> 替代任何 .vimrc
+   --noplugin		不加载 plugin 脚本
+   -p[N]		打开 N 个标签页 (默认值: 每个文件一个)
+   -o[N]		打开 N 个窗口 (默认值: 每个文件一个)
+   -O[N]		同 -o 但垂直分割
+   +			启动后跳到文件末尾
+   +<lnum>		启动后跳到第 <lnum> 行
+   --cmd <command>	加载任何 vimrc 文件前执行 <command>
+   -c <command>		加载第一个文件后执行 <command>
+   -S <session>		加载第一个文件后执行文件 <session>
+   -s <scriptin>	从文件 <scriptin> 读入正常模式的命令
+   -w <scriptout>	将所有输入的命令追加到文件 <scriptout>
+   -W <scriptout>	将所有输入的命令写入到文件 <scriptout>
+   -x			编辑加密的文件
+   --startuptime <文件>	将启动计时信息写入 <文件>
+   --log <文件>		尽早开始记录日志到 <文件>
+   -i <viminfo>		使用 <viminfo> 取代 .viminfo
+   --clean		'nocompatible', Vim 默认选项, 不加载插件, 不读写 viminfo
+   -h  或  --help	打印帮助(本信息)并退出
+   --version		打印版本信息并退出

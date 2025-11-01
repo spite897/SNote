@@ -1,0 +1,102 @@
+**************************************************
+* title:ArchLinuxInstall from:bilibili/TheCW     *
+* source:BV11J411a7Tp   date:250407              *
+* type:LearningNote     LID:001                  *
+* tags:Video S2SGuide Bss Hardware               *
+* duration:113m                                  *
+**************************************************
+
+0> stuff
+    --- Arch >
+        --- AUR                             - arch user repository
+    --- usedMachine >
+        --- Lenovo Ideapad 120S-11IAP       - 140$
+        --- mingjiaiyanxianshiqi BL2480T    #WL:Chinese_support_NA
+
+1> font
+    --- setfont [dir]
+    --- /usr/share/kbd/consolefonts (LatGrkCyr-12x22.psfu.gz)
+
+2> keymap
+    --- loadkeys [keymap] >
+        --- colemak..        - already existant keymaps
+        --- [fileName].conf - artistic keymaps Exmp:{keycode 1 = Caps_Lock}
+
+3> internet
+    --- ip link                     - check your device
+    --- ip link set [device] up     - turn on 
+    
+    --- iwlist [device] scan        - scan (use {| grep ESSID})
+
+    --- wpa_passphrase [wifi] [pw] > internet.conf
+    --- wpa_supplicant -c [internet.conf] -i [device] &     - &(constant working)
+
+    --- dhcpcd &                    - manual reset IP address
+
+4) timedatectl set-ntp true         - pull the clock online
+
+5> diskManage
+    --- fdisk -l                    - list
+    --- fdisk [dir] >
+        --- ? edit the disk space
+        --- Exmp(UEFI) >
+            --- P1 EFI_system_partition +512M
+            --- P2 main_partition       ~
+            --- P3 SWAP                 +8or16G
+    --- mkfs.fat -F32 [dir]         - system_partition ought to be fat32
+    --- mkfs.ext4 [dir]             - main_partition ext4
+    --- mkswap [dir]                - make SWAP
+    --- swapon [dir]                - make SWAP Available
+
+6> pacman.conf
+    --- dir - /etc/pacman.conf >
+        --- color ILoveCandy
+    --- dir - /etc/pacman.d/mirrorlist
+    
+7> mountAndInstall
+    --- mount [device] /mnt         - mount main partition
+    --- mount [device] /mnt/boot    - mount EFI_system_partition ( or /mnt/efi )
+    --- pacstrap /mnt base linux linux-firmware     - install script
+    --- genfstab -U /mnt >> /mnt/etc/fstab
+
+    --- arch-chroot /mnt            - enter local sys
+    --- ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+    --- hwclock --systohe
+
+    --- /etc/locale.gen >
+        --- ? localization config
+        --- unmark en_US.UTF-8
+        --- locale.gen
+    --- /etc/locale.conf        <- LANG=en_US.UTF-8
+    --- /etc/vconsole.conf      <- KEYMAP={colemak[\n]keycode 1 = Caps_Lock}
+
+    --- /etc/hostname           - ? hostname
+    --- /etc/hosts              <- {127.0.0.1[\t]localhost[\n]
+                                    ::1[t]localhost[\n]
+                                    127.0.0.1[\t][hostname]}
+    
+    --- passwd                  - set root password
+
+    --- grub-mkconfig > /boot/grub/grub.cfg
+    --- grub-install --target=x86_64-efi --efi-directory=/boot
+
+8> softwares
+    --- grub efibootmgr intel-ucode os-prober
+    --- wpa_supplicant dhcpcd
+
+9> addtion
+    --- @ - BV1q7411s7LS
+    --- softwares >
+        --- man base-devel    
+    --- useradd -m -G wheel {usrname}
+    --- passwd {usrname}
+
+    --- ln -s /usr/bin/vim /usr/bin/vi
+    --- visudo >
+        --- ? edit sudo file
+        --- [ %wheel ALL=(ALL) ALL ]
+
+    --- AUR packs >
+        --- tlp
+        --- netease-cloud-music
+

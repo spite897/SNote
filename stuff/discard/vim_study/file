@@ -1,0 +1,56 @@
+用法：
+  colormgr [选项…]
+
+  create-device [ID] [SCOPE] [KIND]
+                                    创建设备
+  create-profile [ID] [SCOPE]       创建配置文件
+  delete-device [ID|PATH]           删除设备
+  delete-profile [ID|PATH]          删除配置文件
+  device-add-profile [ID|PATH] [ID|PATH]
+                                    Add a profile to a device that already exists
+  device-get-default-profile [ID|PATH]
+                                    获取设备的默认配置文件
+  device-get-profile-for-qualifier [ID|PATH] [QUALIFIER]
+                                    返回所有符合限定符的配置文件
+  device-inhibit [ID|PATH] [TIMEOUT|0]
+                                    该设备禁用色彩配置文件
+  device-make-profile-default [ID|PATH] [ID|PATH]
+                                    设定设备的默认配置文件
+  device-set-enabled [ID|PATH] [TRUE|FALSE]
+                                    Enables or disables the device
+  device-set-kind [ID|PATH] [KIND]  设定设备类型
+  device-set-model [ID|PATH] [MODEL]
+                                    设定设备型号
+  device-set-serial [ID|PATH] [SERIAL]
+                                    设定设备序列号
+  device-set-vendor [ID|PATH] [VENDOR]
+                                    设定设备厂商
+  dump                              Dump all debug data to a file
+  find-device [ID]                  Find a device from the device ID
+  find-device-by-property [KEY] [VALUE]
+                                    Find a device with a given property value
+  find-profile [ID]                 Find a profile from the profile ID
+  find-profile-by-filename [FILENAME]
+                                    依据文件名查找配置文件
+  get-devices                       获取全部色彩管理设备
+  get-devices-by-kind [KIND]        获取指定类型的全部色彩管理设备
+  get-profiles                      获取所有可用的色彩配置文件
+  get-sensor-reading [KIND]         获得传感器读数
+  get-sensors                       获取所有可用的色彩传感器
+  get-spectral-reading [KIND]       Gets a spectral reading from a sensor
+  get-standard-space [TYPE]         获取标准色彩空间
+  import-profile [FILENAME]         Import a profile and install it for the user
+  profile-set-property [ID|PATH] [KEY] [VALUE]
+                                    Sets extra properties on the profile
+  sensor-lock                       锁定色彩传感器
+  sensor-set-options [KEY] [VALUE]  设定一个或多个传感器选项
+
+帮助选项：
+  -h, --help        显示帮助选项
+
+应用程序选项：
+  -v, --verbose     显示额外的除错信息
+  --version         Show client and daemon versions
+  --value-only      Show the value without any header
+  --filter          Filter object properties when displaying
+

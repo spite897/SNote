@@ -1,0 +1,32 @@
+**************************************************
+* title:pacmanTurtor     from:bilibili/TheCW     *
+* source:BV1o4411N7oH    date:250503             *
+* type:LearningNote      LID:004                 *
+* tags:Video Software                            *
+* duration:21m                                   *
+**************************************************
+
+1> pacman -S
+    --- -S {pack}   - install
+    --- -Sy         - sync source
+    --- -Syy        - force sync source
+    --- -Su         - upgrade automatically
+    --- -Ss {pack}  - search
+    --- -Sc         - remove packs from cache
+
+2> pacman -R
+    --- -R {pack}   - uninstall
+    --- -Rs {pack}  - uninstall with dependencies
+    --- -Rn {pack}  - delete global config
+
+3> pacman -Q
+    --- -Q          - list all pack
+    --- -Qe         - list only user install
+    --- -Qq         - ignore version num
+    --- -Qs         - search
+    --- -Qdt        - list no-need dependencies
+
+4> /etc/pacman.conf
+    --- Color
+    --- CheckSpace
+    --- ILoveCandy
