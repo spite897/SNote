@@ -1,7 +1,7 @@
 # buildLog
 - program: **lua_basis_4** 
 - from: **runoob** 
-- status: **building** 
+- status: **done** 
 
 -----------------------------------------------------------------------------
 
