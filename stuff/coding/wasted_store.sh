@@ -39,7 +39,7 @@ func(){
 # 未實現
 check(){
     for dir in $( ls -A $1) ; do
-            if [[ -d $dir ]] && $(( ! [[  -L $dir ]] )) ; then
+            if [[ -d $dir ]] && [[  -L $dir ]] ; then
             if [[ $dir = .wasted ]] ;then
                 link "${1}/" "${dir}/"
             else 
