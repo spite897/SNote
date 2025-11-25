@@ -6,6 +6,8 @@
 
 Plasma桌面環境設置`Settings>Keyboard>Keyboard>Layouts_Add`，可以通過設置來實現用戶範圍的colemak映射。
 
+> **注意**：使用虛擬鍵盤時，需要在其設置中更改。
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 實現plasma下可自定義的鍵盤映射可通過AUR `evremap` 包實現
