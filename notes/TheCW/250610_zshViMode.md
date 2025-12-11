@@ -1,4 +1,4 @@
-#Plog
+# Plog
 - program: **zshViMode** 
 - status: **done** 
   

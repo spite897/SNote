@@ -1,4 +1,4 @@
-#Plog
+# Plog
 - program: **zshConfig** 
 - status: **building** 
   
