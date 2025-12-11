@@ -1,7 +1,7 @@
 # buildLog
 - program: **vimwiki** 
 - from: **doc/vimwiki** 
-- status: **building** 
+- status: **suspend** 
   
 -----------------------------------------------------------------------------
 ### P0: profile

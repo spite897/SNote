@@ -1,7 +1,7 @@
 # buildLog
 - program: **vim_official_doc**
 - from: **vim9.1/docs/help.txt**
-- status: **building**
+- status: **suspend**
 
 --------
  P0: hints
