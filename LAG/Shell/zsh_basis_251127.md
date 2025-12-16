@@ -487,6 +487,38 @@ local -p
 
 > 这种写法是 zsh 进程在其中作中介。（ cat 的 1 指向管道，管道对面是zsh进程，zsh再打开需要写入的文件。）
 
+-----------------------------------------------------------------------------
+
+### 关于 文件管理
+
+```zsh
+>>testfile </dev/null
+# 创建文件
+```
+
+> `zmodload zsh/files` 使用此模块可作为命令报错的fallback方案。
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#### 使用 mapfile 读写文件
+
+```zsh
+zmodload zsh/mapfile
+mapfile[testfile.txt]="text"
+# 写入
+
+(($+mapfile[testfile.txt]))
+# 文件存在
+
+$mapfile[testfile.txt]
+# 读取
+
+unset $mapfile[testfile.txt]
+# 删除
+
+${(k)mapfile}
+# 遍历
+```
 
 -----------------------------------------------------------------------------
 
