@@ -532,4 +532,39 @@ alias -g ARS="echo ARS"
 
 -----------------------------------------------------------------------------
 
+### 关于 socket
+
+```zsh
+zmodload zsh/net/socket
+
+zsocket -l test.sock
+listenfd=$REPLY
+# 此处等待连接
+zsocket -a $listenfd
+# 连接建立完成
+fd=$REPLY
+echo $fd
+
+cat <&$fd
+
+exec {listenfd}>&-
+exec {fd}>&-
+
+rm test.sock
+```
+
+```zsh
+zmodload zsh/net/socket
+
+zsocket test.sock
+# 连接建立完成
+fd=$REPLY
+echo $fd
+echo text >&$fd
+
+exec {fd}>&-
+```
+
+-----------------------------------------------------------------------------
+
 fg wait trunc
