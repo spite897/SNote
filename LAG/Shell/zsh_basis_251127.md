@@ -539,8 +539,8 @@ zmodload zsh/net/socket
 
 zsocket -l test.sock
 listenfd=$REPLY
-# 此处等待连接
 zsocket -a $listenfd
+# 此处等待连接
 # 连接建立完成
 fd=$REPLY
 echo $fd
@@ -563,6 +563,38 @@ echo $fd
 echo text >&$fd
 
 exec {fd}>&-
+```
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#### 使用 TCP 进行通信
+
+```zsh
+zmodload zsh/net/tcp
+
+ztcp -l 1234
+listenfd=$REPLY
+ztcp -a $listenfd
+# 此处等待连接
+fd=$REPLY
+echo $fd
+
+cat <&$fd
+
+ztcp -c $listenfd
+ztcp -c $fd
+```
+
+```zsh
+zmodload zsh/net/tcp
+
+ztcp 127.0.0.1 1234
+fd=$REPLY
+echo $fd
+
+echo text >&$fd
+
+ztcp -c $fd
 ```
 
 -----------------------------------------------------------------------------
