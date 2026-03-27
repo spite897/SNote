@@ -1,6 +1,5 @@
 # buildLog
 - program: **markdown_cheatbox** 
-- from: **missing** 
 - status: **done** 
 
 -----------------------------------------------------------------------------
