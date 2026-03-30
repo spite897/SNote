@@ -8,8 +8,6 @@ function pac._swap(n1, n2, t)
     t[n1], t[n2] = t[n2], t[n1]
 end
 
--- inplace_flag
--- true for inplace
 function pac.insertionSort( table, length, cmp) 
     local length  = length or #table
     local cmp     = cmp    or pac._cmp
