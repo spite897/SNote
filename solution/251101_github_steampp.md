@@ -21,7 +21,7 @@ $ paru -S watt-toolkit
 
 #### 關於 Certificate
 
-steampp會爲你提供一個瀏覽器訪問的解決方案 即添加其的crt到瀏覽器信任名單
+steampp會爲你提供一個瀏覽器訪問的解決方案 即添加其的crt到瀏覽器信任名單(Authorities)
 - `.local/share/Steam++/Plugins/Accelerator`
 
 #### Addition
